@@ -55,9 +55,7 @@ export async function fetchDashboardData() {
     },
 
     automationUsage: [
-      { type: 'Web Tests', count: 8500, color: '#6366f1' },
-      { type: 'API Tests', count: 2400, color: '#22d3ee' },
-      { type: 'Regression Tests', count: 1550, color: '#a78bfa' },
+      { type: 'Web Tests', count: 12450, color: '#6366f1' },
     ],
 
     usageOverTime: {

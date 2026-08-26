@@ -137,11 +137,11 @@ function renderDashboard(data) {
  */
 function generateRecentActivity() {
   const activities = [
-    { icon: '✅', text: 'Regression suite completed', time: '2 hours ago', status: 'success' },
-    { icon: '❌', text: '3 API tests failed in Suite #412', time: '4 hours ago', status: 'error' },
+    { icon: '✅', text: 'Web test suite #204 completed', time: '2 hours ago', status: 'success' },
+    { icon: '❌', text: '2 Web tests failed in Checkout Suite', time: '4 hours ago', status: 'error' },
     { icon: '🔄', text: 'Web test batch retried', time: '6 hours ago', status: 'warning' },
     { icon: '📩', text: 'Credits request approved by admin', time: '1 day ago', status: 'info' },
-    { icon: '✅', text: 'Full regression run passed', time: '2 days ago', status: 'success' },
+    { icon: '✅', text: 'Full test suite run passed', time: '2 days ago', status: 'success' },
   ];
 
   return activities
