@@ -62,6 +62,35 @@ The standalone dashboard will be available at `http://localhost:5173`.
 
 ---
 
+## 🔌 System Integration Guide
+
+This module is designed for **zero-friction integration** into Testmaite:
+
+### Option 1: Direct Next.js / React Drop-In
+If integrating directly into the Testmaite Next.js platform:
+1. **User Dashboard**: Copy the page component to `app/(app)/usage/page.tsx`.
+2. **Admin Governance**: Copy the approval component to `app/(app)/admin/quota/page.tsx`.
+3. **Dependencies**: Uses `@mantine/core`, `@tabler/icons-react`, and `recharts`.
+
+### Option 2: Standalone Micro-Frontend / Web Component
+If embedding as an independent module or iframe:
+1. Import `src/main.js` and `src/styles/index.css`.
+2. Pass the user's API token via `localStorage.setItem('auth_token', token)` or configure `NEXT_PUBLIC_API_BASE_URL`.
+
+---
+
+## 📡 Backend API Contract
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/v1/quota` | Retrieves user plan, test cases used/remaining, execution runs, and billing period dates. |
+| `GET` | `/api/v1/quota/usage` | Returns audit trail of recent test executions. |
+| `POST` | `/api/v1/credits/request` | Submits credit request (`credit_type`, `amount`, `reason`) to admin. |
+| `GET` | `/api/v1/quota/admin/credit-requests` | (Admin) Lists all pending and historical credit requests. |
+| `POST` | `/api/v1/quota/admin/credit-requests/{id}/approve` | (Admin) Approves credit request and allocates quota. |
+
+---
+
 ## 📂 Project Structure
 
 ```
